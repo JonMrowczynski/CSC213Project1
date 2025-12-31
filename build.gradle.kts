@@ -40,8 +40,6 @@ tasks.test {
 }
 
 tasks.jar {
-    archiveBaseName.set("UniqueHandsProject")
-    manifest {
-        attributes["Main-Class"] = "edu.canisius.csc213.project1.UniqueHands"
-    }
+    archiveBaseName.set("UniqueHandsProject") // Change the name of the jar.
+    manifest { attributes["Main-Class"] = "edu.canisius.csc213.project1.UniqueHands" } // Allow for a runnable jar.
 }
