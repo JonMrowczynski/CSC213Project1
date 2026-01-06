@@ -1,5 +1,9 @@
 # 🃏 CSC213 Project 1
 
+**Author**: Justin Del Vecchio
+
+**Edited by**: Jon Mrowczynski
+
 ---
 
 *Allot at least 3 weeks to complete this project to be safe!*
