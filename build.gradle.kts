@@ -1,12 +1,15 @@
 plugins {
     id("java") // Gradle can work with other languages, not just Java! So want to specify we have a Java project.
     // To find which languages are supported: https://docs.gradle.org/current/userguide/userguide.html
+    id("application") // When using Gradle, it is better to run programs through Gradle, rather than Intellij.
 }
 
 java { // Want to explicitly state which Java version we are using in this project for the programmer and Gradle!
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
+
+application.mainClass = "edu.canisius.csc213.project1.UniqueHands"
 
 repositories {
     mavenCentral() // Where to look for external (3rd-party) dependencies.
@@ -19,11 +22,11 @@ dependencies {
 
     // We'll be using the JUnit testing framework to help us run the unit tests, so pull the necessary dependencies
     // from Maven Central.
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
     // Which can be found here: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.1
 
     // This is for the parameterized tests, which is one of the more powerful tools in the JUnit Testing Framework.
-    testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.2")
     // Which can be found here: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params/6.0.1
 
     // These dependencies are for the testing code to run. /////////////////////////////////////////////////////////////
@@ -31,7 +34,7 @@ dependencies {
     // Need a testing framework launcher to actually run the tests.
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     // Need to specify to the launcher which engine to use when launching.
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.2")
 
 }
 
@@ -40,6 +43,6 @@ tasks.test {
 }
 
 tasks.jar {
-    archiveBaseName.set("UniqueHandsProject") // Change the name of the jar.
-    manifest { attributes["Main-Class"] = "edu.canisius.csc213.project1.UniqueHands" } // Allow for a runnable jar.
+    archiveBaseName.set("UniqueHands") // Change the name of the jar.
+    manifest { attributes["Main-Class"] = application.mainClass } // Ensure jar is runnable.
 }
