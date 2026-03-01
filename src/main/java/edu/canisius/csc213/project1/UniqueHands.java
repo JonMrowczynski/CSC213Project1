@@ -11,7 +11,7 @@ public class UniqueHands {
 		int trials = 5; // Number of trials per deck-hand combination
 		
 		System.out.println("🃏 Deck Simulation: How long to see every possible hand?");
-		System.out.println("------------------------------------------------------");
+		System.out.println("-".repeat(100));
 		
 		// TODO: Implement nested loops
 		// Outer loop: Iterates through deck sizes (24, 28)
