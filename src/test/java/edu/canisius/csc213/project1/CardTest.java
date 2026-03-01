@@ -79,7 +79,7 @@ class CardTest {
 	/**
 	 * Test that the hashCode function maps two equivalent cards to the same code.
 	 */
-	@Test public void testHashCode() {
+	@Test void testHashCode() {
 		final var suit = Card.Suit.HEARTS;
 		final var rank = Card.Rank.THREE;
 		final var card1 = new Card(suit, rank);
