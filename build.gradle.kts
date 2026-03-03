@@ -18,24 +18,14 @@ repositories {
 
 dependencies {
 
-    // These dependencies are for the testing code to compile. /////////////////////////////////////////////////////////
-
     // We'll be using the JUnit testing framework to help us run the unit tests, so pull the necessary dependencies
     // from Maven Central.
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
-    // Which can be found here: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.1
 
-    // This is for the parameterized tests, which is one of the more powerful tools in the JUnit Testing Framework.
-    testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.2")
-    // Which can be found here: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params/6.0.1
+    // This dependency are for the testing code to run. /////////////////////////////////////////////////////////////
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.2") // Declare testing framework launcher.
 
-    // These dependencies are for the testing code to run. /////////////////////////////////////////////////////////////
-
-    // Need a testing framework launcher to actually run the tests.
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    // Need to specify to the launcher which engine to use when launching.
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.2")
-
+    // This dependency are required to compile and run the testing code. ////////////////////////////////////////////
+    testImplementation("org.junit.jupiter:junit-jupiter:6.0.2")
 }
 
 tasks.test {
