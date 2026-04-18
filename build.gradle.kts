@@ -21,10 +21,10 @@ dependencies {
     // We'll be using the JUnit testing framework to help us run the unit tests, so pull the necessary dependencies
     // from Maven Central.
 
-    // This dependency are for the testing code to run. /////////////////////////////////////////////////////////////
+    // This dependency is for the testing code to run. /////////////////////////////////////////////////////////////
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.2") // Declare testing framework launcher.
 
-    // This dependency are required to compile and run the testing code. ////////////////////////////////////////////
+    // This dependency is required to compile and run the testing code. ////////////////////////////////////////////
     testImplementation("org.junit.jupiter:junit-jupiter:6.0.2")
 }
 
